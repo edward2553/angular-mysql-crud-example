@@ -1,0 +1,27 @@
+<br>
+
+  <div class="col-4 offset-md-4">
+    <div class="card">
+      <div class="card-head text-center">
+        <br>
+          <h4>agregar juego</h4>
+      </div>
+      <div class="card-body">
+          <div class="fomr-group">
+              <input type="text" name="title" class="form-control" placeholder="Title goes here" autofocus required [(ngModel)]="game.title" >
+          </div>
+          <br>
+          <form>
+          <div class="fomr-group">
+            <textarea name="description" placeholder="Description" rows="2" class="form-control" autofocus required="" [(ngModel)]="game.description" ></textarea>
+          </div>
+          <br>
+          <div class="fomr-group">
+              <input type="url" name="image" class="form-control" placeholder="URL image goes here" autofocus [(ngModel)]="game.image" >
+          </div>
+          <br>
+          <button class="btn btn-success btn-block" (click)="saveNewGame()">save</button>
+        </form>
+      </div>
+    </div>
+</div>

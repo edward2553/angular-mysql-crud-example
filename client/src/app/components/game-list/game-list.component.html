@@ -1,0 +1,20 @@
+<br>
+<br>
+<div class="row">
+  <div class="col-4" *ngFor="let game of games_array">
+     <div class="card text-center">
+          <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+              {{game.title}}
+              <button class="btn btn-danger">
+                <i class="fas fa-trash"></i>
+              </button>
+          </div>
+          <img [src]=game.image class="card-img-top">
+          <div class="card-body">
+             <p>{{game.description}}</p>
+             <a hfer="#" class="btn btn-info btn-block">edit game</a>
+          </div>
+    </div>
+  </div>
+</div>
+
