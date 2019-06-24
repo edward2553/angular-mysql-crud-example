@@ -1,4 +1,7 @@
 .img-card{
     width: 50%;
     height: 50%;
+    position: relative;
+    left: 119px;
+
 }

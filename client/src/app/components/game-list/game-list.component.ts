@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { GamesService } from '../../services/games.service';
 
 @Component({
@@ -35,5 +35,7 @@ export class GameListComponent implements OnInit {
     );
     this.getGames();
   }
+
+
 
 }
