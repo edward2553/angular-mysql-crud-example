@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Game } from 'src/app/models/Game';
 import { GamesService } from '../../services/games.service'
 
@@ -9,13 +9,14 @@ import { GamesService } from '../../services/games.service'
 })
 export class GameFormComponent implements OnInit {
 
-  @HostBinding('class') classes = 'row';
+
 
   game : Game = {
     id: 0,
     title: '',
     description: '',
-    image : ''
+    image : '',
+    created_at:new Date()
   };
 
   constructor(private gameService: GamesService) { }
@@ -24,6 +25,8 @@ export class GameFormComponent implements OnInit {
   }
 
   saveNewGame(){
+    delete this.game.created_at;
+    delete this.game.id;
     this.gameService.saveGame(this.game).subscribe(
       res => {
         console.log(res)

@@ -8,19 +8,32 @@ import { GamesService } from '../../services/games.service';
 })
 export class GameListComponent implements OnInit {
 
-  @HostBinding('class') classes = "row";
+
 
   games_array: any =[];
   constructor(private gameServices: GamesService) {}
 
   ngOnInit() {
   // subscribe 
+    this.getGames();
+  }
+
+  getGames(){
     this.gameServices.getGames().subscribe(
       res =>{
           this.games_array = res;
       },
       err => console.error(err)
     );
+  }
+  deleteGame(id:string){
+    this.gameServices.deleteGame(id).subscribe(
+      res => {
+        console.log(res)
+      },
+      err => console.error(err)
+    );
+    this.getGames();
   }
 
 }

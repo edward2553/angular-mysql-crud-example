@@ -31,9 +31,10 @@ class GamesController {
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            //const  id  = parseInt(req.params.id_update,10); ;
-            //await con.query("update from games set ? where id = ?",[req.body,id]);
-            res.json({ "message": "game has been updated successfully" });
+            const id = parseInt(req.params.id_update, 10);
+            console.log(id);
+            yield database_1.default.query("update games set ? where id = ?", [req.body, id]);
+            res.json({ "message": "game " + id + " has been updated successfully" });
         });
     }
     delete(req, res) {
