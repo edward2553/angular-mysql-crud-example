@@ -8,6 +8,7 @@ const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const gameRoutes_1 = __importDefault(require("./routes/gameRoutes"));
+const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
 const bodyParser = require('body-parser');
 class Server {
     constructor() {
@@ -26,6 +27,7 @@ class Server {
     routes() {
         this.app.use('/', indexRoutes_1.default);
         this.app.use('/api/games', gameRoutes_1.default);
+        this.app.use('/api/user', userRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

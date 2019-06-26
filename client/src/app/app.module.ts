@@ -8,6 +8,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { GameFormComponent } from './components/game-form/game-form.component';
 import { GameListComponent } from './components/game-list/game-list.component';
 import { GamesService } from './services/games.service';
+import { UserServiceService } from './services/user/user-service.service';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [
-    GamesService
+    GamesService,
+    UserServiceService
   ],
   bootstrap: [AppComponent]
 })
