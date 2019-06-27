@@ -10,13 +10,15 @@ import { GameListComponent } from './components/game-list/game-list.component';
 import { GamesService } from './services/games.service';
 import { UserServiceService } from './services/user/user-service.service';
 import { FormsModule } from '@angular/forms';
+import { VerPerfilComponent } from './components/ver-perfil/ver-perfil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     GameFormComponent,
-    GameListComponent
+    GameListComponent,
+    VerPerfilComponent
   ],
   imports: [
     BrowserModule,

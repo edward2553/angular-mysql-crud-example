@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { GameListComponent } from './components/game-list/game-list.component';
 import { GameFormComponent } from "./components/game-form/game-form.component";
+import { VerPerfilComponent } from './components/ver-perfil/ver-perfil.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: "games/edit/:id",
     component: GameFormComponent
+  },
+  {
+    path: "perfil/:id",
+    component: VerPerfilComponent
   }
 ];
 

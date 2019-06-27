@@ -20,7 +20,7 @@ export class NavigationComponent implements OnInit {
     nombre: '',
     apellido: '',
     nombre_usuario : '',
-    contraseña: '',
+    contrasena: '',
     correo: '',
     telefono: '',
     profesion: '',
