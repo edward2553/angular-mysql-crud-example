@@ -27,6 +27,11 @@ export class VerPerfilComponent implements OnInit {
   };
 
   edit:boolean;
+  showpwd: boolean = true;
+
+  verContrasena(psw:boolean){
+
+  }
 
   ngOnInit() {
 
