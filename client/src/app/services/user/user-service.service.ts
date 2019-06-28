@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 //encargado de hacer las peticiones http
 import { HttpClient } from '@angular/common/http';
 import { User } from '../../models/User';
-import { Observable } from 'rxjs';
+import { Observable, observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,10 @@ export class UserServiceService {
 
   getOneUser(id:number){
     return this.http.get(this.API_URI+'/user/'+id);
+  }
+
+  updateUser(id:number,user:User):Observable<User>{
+    return this.http.put(this.API_URI+'/user/'+id,user);
   }
 
 }

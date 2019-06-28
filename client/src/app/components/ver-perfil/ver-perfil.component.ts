@@ -50,7 +50,15 @@ export class VerPerfilComponent implements OnInit {
   }
 
   updateUser(id:number){
-    console.log("we are editing the user "+id);
+    delete this.user.id;
+    console.log
+    this.userService.updateUser(id,this.user).subscribe(
+      res => {
+        console.log(res)
+        this.router.navigate(['/games']);
+      },
+      err => console.error(err)
+    );
   }
 
   saveNewUSer(){

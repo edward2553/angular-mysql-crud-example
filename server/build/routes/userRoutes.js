@@ -12,6 +12,7 @@ class UserRoutes {
     }
     config() {
         this.router.get('/:id_getOneUser', userController_1.default.getOneUser);
+        this.router.put('/:id_getOneUser', userController_1.default.updateUser);
     }
 }
 const userRoutes = new UserRoutes();

@@ -7,8 +7,7 @@
       <p class="card-text">{{game.description}}</p>
       <p class="card-text"><small class="text-muted">
         <button [routerLink]="['/games/edit',game.id]" type="button" class="btn btn-outline-info btn-block">Edit</button>
-          <button type="button" [routerLink]="['/games']" class="btn btn-outline-danger btn-block" (click)="deleteGame(game.id)">Delete
-          </button>
+          <button type="button" [routerLink]="['/games']" class="btn btn-outline-danger btn-block" (click)="deleteGame(game.id)">Delete</button>
         </small></p>
     </div>
   </div>

@@ -24,6 +24,14 @@ class userController {
             });
         });
     }
+    updateUser(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const id = parseInt(req.params.id_getOneUser, 10);
+            console.log(id);
+            yield database_1.default.query("update usuario set ? where id = ?", [req.body, id]);
+            res.json({ "message": "game " + id + " has been updated successfully" });
+        });
+    }
 }
 const userClass = new userController();
 exports.default = userClass;

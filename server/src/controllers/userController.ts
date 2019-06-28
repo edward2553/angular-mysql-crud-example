@@ -12,6 +12,12 @@ class userController{
         console.log(err); 
         });
     }
+    public async updateUser(req: Request, res: Response):Promise<void>{
+        const  id  = parseInt(req.params.id_getOneUser,10); 
+        console.log(id);
+        await con.query("update usuario set ? where id = ?",[req.body,id]);
+        res.json({"message":"game "+id+" has been updated successfully"});
+    }
 }
 
 const userClass = new userController(); 

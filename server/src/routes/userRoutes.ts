@@ -10,6 +10,7 @@ class UserRoutes{
 
     config():void{
         this.router.get('/:id_getOneUser',userController.getOneUser);
+        this.router.put('/:id_getOneUser',userController.updateUser);
     }
 }
 
