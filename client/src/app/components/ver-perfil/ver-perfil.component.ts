@@ -23,7 +23,7 @@ export class VerPerfilComponent implements OnInit {
     telefono: '',
     profesion: '',
     nivel_academico: '',
-    imagen: ''
+    image: ''
   };
 
   edit:boolean;
@@ -49,9 +49,12 @@ export class VerPerfilComponent implements OnInit {
     }
   }
 
-  updateUser(id:number){
+  updateUser(){
+    const paramsURL = this.activatedRouter.snapshot.params;
     delete this.user.id;
-    console.log
+    let id = paramsURL.id;
+    // console.log(id);
+    // console.log(this.user);
     this.userService.updateUser(id,this.user).subscribe(
       res => {
         console.log(res)
