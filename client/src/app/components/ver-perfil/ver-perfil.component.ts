@@ -11,9 +11,11 @@ import { UserServiceService } from '../../services/user/user-service.service';
 })
 export class VerPerfilComponent implements OnInit {
 
-  constructor(private userService:UserServiceService,private router: Router, private activatedRouter: ActivatedRoute) { }
+   verPassword = false;
 
-  user : User = {
+  constructor(private userService: UserServiceService, private router: Router, private activatedRouter: ActivatedRoute) { }
+
+  user: User = {
     id: 0,
     nombre: '',
     apellido: '',
@@ -26,17 +28,18 @@ export class VerPerfilComponent implements OnInit {
     imagen: ''
   };
 
-  edit:boolean;
-  showpwd: boolean = true;
+  edit: boolean;
+  showpwd = true;
 
-  verContrasena(psw:boolean){
+  verContrasena2(asds) {
+    console.log(asds);
 
   }
 
   ngOnInit() {
 
     const paramsURL = this.activatedRouter.snapshot.params;
-    if(paramsURL.id){
+    if (paramsURL.id) {
       this.userService.getOneUser(paramsURL.id)
       .subscribe(
         res => {
@@ -45,24 +48,23 @@ export class VerPerfilComponent implements OnInit {
           this.edit = true;
         },
         err => console.error(err)
-      )
+      );
     }
   }
 
-  updateUser(id:number){
+  updateUser(id: number) {
     delete this.user.id;
-    console.log
-    this.userService.updateUser(id,this.user).subscribe(
+    this.userService.updateUser(id, this.user).subscribe(
       res => {
-        console.log(res)
+        console.log(res);
         this.router.navigate(['/games']);
       },
       err => console.error(err)
     );
   }
 
-  saveNewUSer(){
-    console.log("creating a new user");
-  }
+  saveNewUSer() {
+    console.log('creating a new user');
+   }
 
 }
