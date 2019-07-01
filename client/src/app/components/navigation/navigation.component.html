@@ -1,42 +1,41 @@
-<!-- <div class="navbar-fixed"> 
-    <ul id="dropdown1" class="dropdown-content">
-        <li><a [routerLink]="['/perfil/',user.id]">Perfil</a></li>
-        <li><a href="#">Mis Tarjetas</a></li>
-        <li><a href="#">Favoritas</a></li>
-        <li class="divider"></li>
-        <li><a href="#">Salir</a></li>
-    </ul>
-  <nav>
-      <div class="nav-wrapper">
-        <img src="../../assets/idea.png" class="brand-logo" alt="...">
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><img src="../../assets/perfil.jpg" class="img" alt="..."></li>
-          <li><a routerLink="/games" routerLinkActive="active"><i class="fas fa-gamepad"></i> Usuario</a></li>
-          <li><a routerLink="/games/add" routerLinkActive="active"><i class="fas fa-plus-circle"></i> Agregar</a></li>
-          <li><a class="dropdown-trigger" data-target="dropdown1">Opciones<i class="material-icons right">arrow_drop_down</i></a></li>
-        </ul>
-      </div>
-    </nav>
-</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
+  <div class="container">
+    <img src="../../assets/idea.png" class="img" alt="...">
+    <a class="navbar-brand" routerLink="/">TuTalento</a>
+    <a class="navbar-brand" routerLink="/">Inicio</a>
+    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
 
- -->
-<!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
-</ul>
-<nav>
-  <div class="nav-wrapper">
-    <a href="#!" class="brand-logo">Logo</a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <!-- Dropdown Trigger -->
-      <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-    </ul>
+        <li class="nav-item">
+          <img src="../../assets/perfil.jpg" class="img" alt="...">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/games" routerLinkActive="active"><i class="fas fa-gamepad"></i>Usuario</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/games/add" routerLinkActive="active"><i
+              class="fas fa-plus-circle"></i>Agregar </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Opciones
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/perfil/',user.id]">Perfil</a>
+            <a class="dropdown-item" href="#">Mis Tarjetas</a>
+            <a class="dropdown-item" href="#">Favoritas</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Salir</a>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
