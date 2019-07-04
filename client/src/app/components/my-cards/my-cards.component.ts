@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TarjetasService } from './../../services/cards/tarjetas.service';
 
 @Component({
   selector: 'app-my-cards',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyCardsComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private cardService: TarjetasService) { }
 
   ngOnInit() {
+
   }
+
+  getUserCards(){
+    
+  }
+  // guardarTarjeta(){
+  //   this.cardService.saveCard(this.card).subscribe(
+  //     res =>{
+  //       console.log(res)
+  //       this.router.navigate(['/games']);
+  //     },
+  //     err => console.log(err)
+  //   );
+  // }
 
 }

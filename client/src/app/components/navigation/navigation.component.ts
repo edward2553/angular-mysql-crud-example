@@ -33,6 +33,7 @@ export class NavigationComponent implements OnInit {
       res => {
         console.log(res);
         this.user = res[0];
+        return res[0].id;
       },
       err => console.error(err)
     )
