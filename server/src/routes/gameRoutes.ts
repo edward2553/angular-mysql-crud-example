@@ -1,5 +1,4 @@
 import { Router } from 'express';
-
 import  gamesController  from '../controllers/gamesController';
 
 class GamesRoutes{

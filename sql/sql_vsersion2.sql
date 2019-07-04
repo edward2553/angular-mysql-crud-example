@@ -42,3 +42,10 @@ CREATE TABLE tarjetas_guardadas(
 	id_persona int(11) not null,
     id_tarjeta int(11) not null
 );
+
+select * from usuario;
+describe usuario;
+insert into usuario (nombre,apellido,nombre_usuario,contraseña,correo,telefono,profesion,nivel_academico,imagen) values ("edward","moron","edward2334","12345","edward.moron@elpoli.edu.co",1234,"ingeniero en sistemas","imagen");
+
+select * from ng_games_db.tarjetas;
+
