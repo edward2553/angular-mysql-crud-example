@@ -8,5 +8,5 @@ export interface User{
     telefono?: string,
     profesion?: string,
     nivel_academico?: string,
-    image?: string
+    imagen?: string
 }

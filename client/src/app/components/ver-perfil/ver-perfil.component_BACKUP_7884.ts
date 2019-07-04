@@ -11,7 +11,7 @@ import { UserServiceService } from '../../services/user/user-service.service';
 })
 export class VerPerfilComponent implements OnInit {
 
-   verPassword = false;
+  verPassword = false;
 
   constructor(private userService: UserServiceService, private router: Router, private activatedRouter: ActivatedRoute) { }
 
@@ -19,7 +19,7 @@ export class VerPerfilComponent implements OnInit {
     id: 0,
     nombre: '',
     apellido: '',
-    nombre_usuario : '',
+    nombre_usuario: '',
     contrasena: '',
     correo: '',
     telefono: '',
@@ -41,19 +41,23 @@ export class VerPerfilComponent implements OnInit {
     const paramsURL = this.activatedRouter.snapshot.params;
     if (paramsURL.id) {
       this.userService.getOneUser(paramsURL.id)
-      .subscribe(
-        res => {
-          console.log(res);
-          this.user = res[0];
-          this.edit = true;
-        },
-        err => console.error(err)
-      );
+        .subscribe(
+          res => {
+            console.log(res);
+            this.user = res[0];
+            this.edit = true;
+          },
+          err => console.error(err)
+        );
     }
   }
 
-  updateUser(id: number) {
+  updateUser() {
+    const paramsURL = this.activatedRouter.snapshot.params;
     delete this.user.id;
+    const id = paramsURL.id;
+    // console.log(id);
+    // console.log(this.user);
     this.userService.updateUser(id, this.user).subscribe(
       res => {
         console.log(res);
@@ -65,6 +69,6 @@ export class VerPerfilComponent implements OnInit {
 
   saveNewUSer() {
     console.log('creating a new user');
-   }
+  }
 
 }

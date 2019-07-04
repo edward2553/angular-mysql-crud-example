@@ -1,23 +1,34 @@
-
-<div class="row margin"> 
+<br>
+<br>
+<div class="row"> 
   <!--Foto de perfil-->
   
   <div class="col-12 col-md-12 col-lg-12 text-center" >
-      <img [src]=user.imagen class="img img-fluid" alt="Responsive image">
+      <img [src]=user.image class="img img-fluid" alt="Responsive image">
   </div>
 </div>
-<h4 class="text-divider marginTopNormal"><span>Información personal</span></h4>
+<br>
+<h4 class="text-divider"><span>Información personal</span></h4>
 <div class="row"> 
     <div class="col-12 col-md-6 col-lg-6">
             <label for="nombre">nombre</label>
             <input type="text" class="form-control-sm form-control" id="nombre" value="{{user.nombre}}">
       </div>
-      <div class="col-12 col-md-6 col-lg-6">
-           <label for="apellido">Apellido</label>
-           <input type="text" class="form-control-sm form-control" id="apellido" value="{{user.apellido}}">
+      <br>
+      <h4 class="text-divider"><span>Información personal</span></h4>
+      <div class="row"> 
+          <div class="col-12 col-md-6 col-lg-6">
+                  <label for="nombre">nombre</label>
+                  <input type="text" class="form-control-sm form-control" id="nombre" [(ngModel)]="user.nombre">
+            </div>
+            <div class="col-12 col-md-6 col-lg-6">
+                 <label for="apellido">Apellido</label>
+                 <input type="text" class="form-control-sm form-control" id="apellido" [(ngModel)]="user.apellido">
+            </div>
       </div>
 </div>
-<div class="row marginTopNormal">  
+<br>
+<div class="row"> 
     <div class="col-12 col-md-6 col-lg-6">
         <label for="correo">Correo</label>
         <input type="email" class="form-control-sm form-control" id="correo" value="{{user.correo}}">
@@ -27,7 +38,8 @@
         <input type="tel" class="form-control-sm form-control" id="telefono" value="{{user.telefono}}">
     </div>
 </div>
-<div class="row marginTopNormal"> 
+<br>
+<div class="row"> 
     <div class="col-12 col-md-6 col-lg-6">
         <label for="usuario">Usuario</label>
         <input type="text" class="form-control-sm form-control" id="usuario" value="{{user.nombre_usuario}}">
@@ -36,17 +48,21 @@
         <label for="contrasena">Contraseña</label>
         <input type="{{ verPassword ? 'text' : 'password' }}" class="form-control-sm form-control" id="contrasena" value="{{user.contrasena}}">
     </div>
-    <div class="col-2 col-md-2 col-lg-2">
-        <label for="verContrasena">Mostrar</label>
-        <button id="verContrasena" class="btn btn-sm btn-block" (click)="verPassword = !verPassword"> 
-            <i *ngIf="!verPassword" class="fas fa-eye"></i>
-            <i *ngIf="verPassword" class="fas fa-eye-slash"></i>
-        </button>
+    <div class="col-12 col-md-2 col-lg-2">
+        <label for="verContrasena">Ver contraseña</label>
+        <button id="verContrasena" class="btn btn-sm btn-block" (click)="verPassword = !verPassword"><i class="fas fa-eye"></i></button>
     </div>
 </div>
-
-<h4 class="text-divider marginTopNormal"><span>Información académica</span></h4>
-<div class="row marginTopNormal"> 
+<div class="row"> 
+    <div class="col-12 col-md-12 col-lg-12">
+        <label for="ConfirmarContrasena">Confirmar contraseña</label>
+        <input type="{{ verPassword ? 'text' : 'password' }}" class="form-control-sm form-control" id="confirmContra" value="">
+    </div>
+</div>
+<br>
+<h4 class="text-divider"><span>Información académica</span></h4>
+<br>
+<div class="row"> 
     <div class="col-12 col-md-6 col-lg-6">
         <label for="Carrera">Carrera</label>
         <input type="text" class="form-control-sm form-control" id="carrera" value="{{user.profesion}}">
@@ -56,11 +72,5 @@
         <input type="text" class="form-control-sm form-control" id="Nacademico" value="{{user.nivel_academico}}">
     </div>
 </div>
-
-<div class="row marginTopNormal marginButton"> 
-    <div class="col-12 col-md-12 col-lg-12">
-        <button class="btn btn-success btn-sm btn-block" (click)="updateUser(user.id)">guardar datos</button>
-    </div>
-</div>
-
-
+<br>
+<br>

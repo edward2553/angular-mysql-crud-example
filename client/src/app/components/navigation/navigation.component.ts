@@ -25,7 +25,7 @@ export class NavigationComponent implements OnInit {
     telefono: '',
     profesion: '',
     nivel_academico: '',
-    image: ''
+    imagen: ''
   };
 
   obtenerUsuario(id:number){
