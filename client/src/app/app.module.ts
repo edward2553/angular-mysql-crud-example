@@ -11,6 +11,9 @@ import { GamesService } from './services/games.service';
 import { UserServiceService } from './services/user/user-service.service';
 import { FormsModule } from '@angular/forms';
 import { VerPerfilComponent } from './components/ver-perfil/ver-perfil.component';
+import { CrearTarjetasComponent } from './components/crear-tarjetas/crear-tarjetas.component';
+import { TarjetasService } from './services/cards/tarjetas.service';
+import { MyCardsComponent } from './components/my-cards/my-cards.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { VerPerfilComponent } from './components/ver-perfil/ver-perfil.component
     NavigationComponent,
     GameFormComponent,
     GameListComponent,
-    VerPerfilComponent
+    VerPerfilComponent,
+    CrearTarjetasComponent,
+    MyCardsComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,8 @@ import { VerPerfilComponent } from './components/ver-perfil/ver-perfil.component
   ],
   providers: [
     GamesService,
-    UserServiceService
+    UserServiceService,
+    TarjetasService
   ],
   bootstrap: [AppComponent]
 })
