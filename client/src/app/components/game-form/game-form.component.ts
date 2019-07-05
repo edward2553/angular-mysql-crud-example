@@ -9,8 +9,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class GameFormComponent implements OnInit {
 
-
-
   game : Game = {
     title: '',
     description: '',

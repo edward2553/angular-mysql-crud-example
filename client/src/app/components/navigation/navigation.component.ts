@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from './../../models/User';
+import { UserServiceService } from '../../services/user/user-service.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService:UserServiceService) { }
 
   ngOnInit() {
+    this.obtenerUsuario(1);
   }
 
+  user : User = {
+    id: 0,
+    nombre: '',
+    apellido: '',
+    nombre_usuario : '',
+    contrasena: '',
+    correo: '',
+    telefono: '',
+    profesion: '',
+    nivel_academico: '',
+    imagen: ''
+  };
+
+  obtenerUsuario(id:number){
+    this.userService.getOneUser(id).subscribe(
+      res => {
+        console.log(res);
+        this.user = res[0];
+        return res[0].id;
+      },
+      err => console.error(err)
+    )
+  }
+
+  
 }
