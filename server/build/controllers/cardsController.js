@@ -19,6 +19,16 @@ class cardsController {
             res.json({ "message": "card has been created successfully" });
         });
     }
+    getUserCards(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield database_1.default.query('select * from tarjetas where ?', [req.body], (err, rows, fields) => {
+                if (!err)
+                    res.json(rows);
+                else
+                    console.log(err);
+            });
+        });
+    }
 }
 const cardsClass = new cardsController();
 exports.default = cardsClass;

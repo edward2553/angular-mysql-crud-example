@@ -10,6 +10,7 @@ class CardRoutes{
 
     config():void{
         this.router.post('/',cardsController.createCard);
+        this.router.post('/getUserCards',cardsController.getUserCards);
     }
 }
 

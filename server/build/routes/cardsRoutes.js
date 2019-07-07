@@ -12,6 +12,7 @@ class CardRoutes {
     }
     config() {
         this.router.post('/', cardsController_1.default.createCard);
+        this.router.post('/getUserCards', cardsController_1.default.getUserCards);
     }
 }
 const cardsRoutes = new CardRoutes();

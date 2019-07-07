@@ -11,6 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class CrearTarjetasComponent implements OnInit {
 
   card:Card = {
+    id_persona:1,
     title : '',
     description : '',
     precio : 0,
