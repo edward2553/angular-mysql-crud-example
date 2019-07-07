@@ -1,3 +1,15 @@
-<p>
-  my-cards works!
-</p>
+
+<div class="card-columns  mt-3">
+  <div class="card" *ngFor="let cards of cards_array">
+    <img [src]=cards.image class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{cards.title}}</h5>
+      <p class="card-text">{{cards.description}}</p>
+      <p class="card-text">{{cards.precio}}</p>
+      <p class="card-text"><small class="text-muted">
+        <button [routerLink]="['/games/edit',cards.id]" type="button" class="btn btn-outline-info btn-block">Edit</button>
+          <button type="button" [routerLink]="['/games']" class="btn btn-outline-danger btn-block" (click)="deleteGame(cards.id)">Delete</button>
+        </small></p>
+    </div>
+  </div>
+</div>
