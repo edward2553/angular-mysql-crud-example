@@ -5,6 +5,7 @@ import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import gameRoutes from './routes/gameRoutes';
 import userRoutes from './routes/userRoutes';
+import cardRoutes from './routes/cardsRoutes'; 
 
 const bodyParser = require('body-parser');
 class Server {
@@ -28,6 +29,7 @@ class Server {
         this.app.use('/',indexRoutes);
         this.app.use('/api/games',gameRoutes);
         this.app.use('/api/user',userRoutes);
+        this.app.use('/api/cards',cardRoutes);
     }
     start(): void{
         this.app.listen(this.app.get('port'), () => {
