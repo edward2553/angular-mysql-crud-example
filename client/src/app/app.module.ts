@@ -8,14 +8,22 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { GameFormComponent } from './components/game-form/game-form.component';
 import { GameListComponent } from './components/game-list/game-list.component';
 import { GamesService } from './services/games.service';
+import { UserServiceService } from './services/user/user-service.service';
 import { FormsModule } from '@angular/forms';
+import { VerPerfilComponent } from './components/ver-perfil/ver-perfil.component';
+import { CrearTarjetasComponent } from './components/crear-tarjetas/crear-tarjetas.component';
+import { TarjetasService } from './services/cards/tarjetas.service';
+import { MyCardsComponent } from './components/my-cards/my-cards.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     GameFormComponent,
-    GameListComponent
+    GameListComponent,
+    VerPerfilComponent,
+    CrearTarjetasComponent,
+    MyCardsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +32,9 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [
-    GamesService
+    GamesService,
+    UserServiceService,
+    TarjetasService
   ],
   bootstrap: [AppComponent]
 })
