@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { User } from '../../models/User';
 import { UserServiceService } from '../../services/user/user-service.service';
 
 
@@ -15,7 +14,7 @@ export class VerPerfilComponent implements OnInit {
 
   constructor(private userService: UserServiceService, private router: Router, private activatedRouter: ActivatedRoute) { }
 
-  user: User = {
+  user = {
     id: 0,
     nombre: '',
     apellido: '',
@@ -25,7 +24,7 @@ export class VerPerfilComponent implements OnInit {
     telefono: '',
     profesion: '',
     nivel_academico: '',
-    imagen: ''
+    image: ''
   };
 
   edit: boolean;
