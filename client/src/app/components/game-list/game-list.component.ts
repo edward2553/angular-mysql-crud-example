@@ -17,6 +17,7 @@ export class GameListComponent implements OnInit {
   }
 
   getGames() {
+    console.log(this.gameServices);
     this.gameServices.getGames().subscribe(
       res => {
           this.GAMES_ARRAY = res;
@@ -33,7 +34,6 @@ export class GameListComponent implements OnInit {
     );
     this.getGames();
   }
-
 
 
 }

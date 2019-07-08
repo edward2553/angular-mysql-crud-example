@@ -15,8 +15,7 @@ export class MyCardsComponent implements OnInit {
 
   }
 
-  getUserCards(){
-    
+  getUserCards() {
   }
   // guardarTarjeta(){
   //   this.cardService.saveCard(this.card).subscribe(

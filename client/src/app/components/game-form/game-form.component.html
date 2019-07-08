@@ -1,6 +1,6 @@
 <br>
 <br>
-<div class="row">
+<div class="row container">
   <div class="col-sm-12 col-md-6 col-lg-6">
     <div class="card">
       <div class="card-head text-center">
@@ -21,7 +21,7 @@
               <input type="url" name="image" class="form-control" placeholder="URL image goes here" autofocus [(ngModel)]="game.image" >
           </div>
           <br>
-          <button class="btn btn-success btn-block" (click)="edit ? updateGame(game.id) : saveNewGame()">save</button>
+          <!-- <button class="btn btn-success btn-block" (click)="edit ? updateGame(game.id) : saveNewGame()">save</button> -->
         </form>
       </div>
     </div>
@@ -30,11 +30,11 @@
     <div class="card card-body text-center">
         <img [src]="game.image == '' ? '/assets/default-image-game.jpg' : game.image  " class="img-card">
         <br>
-        <h3>{{game.id}} - {{game.title == '' ? 'Game Title' : game.title}}</h3>
+        <h3> {{game.title == '' ? 'Game Title' : game.title}}</h3>
         <br>
         <p>{{game.description == '' ? 'Description goes here' : game.description}}</p>
         <br>
-        <p>{{game.created_at | date: 'yyyy-MM-dd'}}</p>
+        <!-- <p>{{ game.created_at | date: 'yyyy-MM-dd'}}</p> -->
     </div>
   </div>
 </div>

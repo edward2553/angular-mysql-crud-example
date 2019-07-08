@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
-//este modulo permite definir modulos en la aplicacion
 import { Routes, RouterModule } from '@angular/router';
 import { GameListComponent } from './components/game-list/game-list.component';
-import { GameFormComponent } from "./components/game-form/game-form.component";
+import { GameFormComponent } from './components/game-form/game-form.component';
 import { VerPerfilComponent } from './components/ver-perfil/ver-perfil.component';
 import { CrearTarjetasComponent } from './components/crear-tarjetas/crear-tarjetas.component';
 import { MyCardsComponent } from './components/my-cards/my-cards.component';
+import { BuscarTarjetaComponent } from './components/buscar-tarjeta/buscar-tarjeta.component';
 
 const routes: Routes = [
   {
-    //como se va a llamar nuestra ruta
     path: '',
     redirectTo: '/games',
     pathMatch: 'full'
@@ -19,25 +18,28 @@ const routes: Routes = [
     component: GameListComponent
   },
   {
-    path: "games/add",
+    path: 'games/add',
     component: GameFormComponent
   },
   {
-    path: "games/edit/:id",
+    path: 'games/edit/:id',
     component: GameFormComponent
   },
   {
-    path: "perfil/:id",
+    path: 'perfil/:id',
     component: VerPerfilComponent
-  },  
+  },
   {
-    path: "cards/add",
+    path: 'cards/add',
     component: CrearTarjetasComponent
   },
   {
-    path: "cards/myCards",
+    path: 'cards/myCards',
     component: MyCardsComponent
-  }
+  },
+  { path: 'buscar/:termino',
+   component: BuscarTarjetaComponent
+  },
 ];
 
 @NgModule({
