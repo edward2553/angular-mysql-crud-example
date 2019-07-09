@@ -9,6 +9,7 @@ import { TarjetasService } from './../../services/cards/tarjetas.service';
 export class MyCardsComponent implements OnInit {
 
   cards_array: any = [];
+  mensajeBorrado: any = [];
   id ={
     "id_persona":1
   }
@@ -28,5 +29,15 @@ export class MyCardsComponent implements OnInit {
     );
   }
 
+  
+  deleteCard(id:number){
+    this.cardService.deleteCard(id).subscribe(
+      res =>{
+        this.mensajeBorrado = res;
+      },
+      err => console.log(err)
+    );
+    this.getUserCards(this.id);
+  }
 
 }

@@ -37,6 +37,10 @@ const routes: Routes = [
   {
     path: "cards/myCards",
     component: MyCardsComponent
+  },
+  {
+    path: "cards/edit/:edit",
+    component: CrearTarjetasComponent
   }
 ];
 

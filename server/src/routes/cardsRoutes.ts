@@ -11,6 +11,9 @@ class CardRoutes{
     config():void{
         this.router.post('/',cardsController.createCard);
         this.router.post('/getUserCards',cardsController.getUserCards);
+        this.router.delete('/deleteCard/:id_delete',cardsController.deletecard);
+        this.router.post('/getOneUserCard',cardsController.getOneUserCard);
+        this.router.put('/updateUser/:id_update',cardsController.updateCard);
     }
 }
 

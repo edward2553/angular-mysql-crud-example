@@ -29,6 +29,40 @@ class cardsController {
             });
         });
     }
+    deletecard(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield database_1.default.query("delete from tarjetas where id =" + '' + req.params.id_delete + '' + "", (err, rows, fields) => {
+                if (!err)
+                    res.json({ "message": "card successfully deleted" });
+                else
+                    console.log(err);
+            });
+        });
+    }
+    getOneUserCard(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield database_1.default.query("select * from tarjetas where ?", [req.body], (err, rows, fields) => {
+                if (!err)
+                    res.json(rows);
+                else
+                    console.log(err);
+            });
+        });
+    }
+    updateCard(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const id = parseInt(req.params.id_update, 10);
+            yield database_1.default.query("update tarjetas set ? where id = ?", [req.body, id]);
+            res.json({ "message": "cards has been successfully updated" });
+        });
+    }
+    update(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const id = parseInt(req.params.id_update, 10);
+            yield database_1.default.query("update games set ? where id = ?", [req.body, id]);
+            res.json({ "message": "game " + id + " has been updated successfully" });
+        });
+    }
 }
 const cardsClass = new cardsController();
 exports.default = cardsClass;

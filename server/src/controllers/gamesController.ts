@@ -19,7 +19,6 @@ class GamesController{
     
     public async update(req: Request, res: Response):Promise<void>{
         const  id  = parseInt(req.params.id_update,10); 
-        console.log(id);
         await con.query("update games set ? where id = ?",[req.body,id]);
         res.json({"message":"game "+id+" has been updated successfully"});
     }

@@ -10,6 +10,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CrearTarjetasComponent implements OnInit {
 
+  id ={
+    "id":4
+  }
+
   card:Card = {
     id_persona:1,
     title : '',
@@ -17,10 +21,16 @@ export class CrearTarjetasComponent implements OnInit {
     precio : 0,
     image: ''
   };
-
-  constructor(private cardService: TarjetasService,private router:Router) { }
+  edit:boolean = false;
+  constructor(private cardService: TarjetasService,private router:Router, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
+    const params = this.activatedRoute.snapshot.params;
+    this.edit = params.edit;
+    if(this.edit){
+      this.obtenerTarjeta();
+    }
+
   }
 
   guardarTarjeta(){
@@ -32,5 +42,15 @@ export class CrearTarjetasComponent implements OnInit {
       err => console.log(err)
     );
   }
+
+  obtenerTarjeta(){
+    this.cardService.obtenerTarjeta(this.id).subscribe(
+      res =>{
+        console.log(res);
+        this.card = res[0];
+      },
+      err => console.log(err)
+    );
+  }  
 
 }

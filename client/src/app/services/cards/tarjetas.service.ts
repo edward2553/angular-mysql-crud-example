@@ -19,4 +19,17 @@ export class TarjetasService {
     return this.http.post(this.API_URL+'/cards/getUserCards',id);
   }
 
+  deleteCard(id: number){
+    return this.http.delete(this.API_URL+'/cards/deleteCard/'+id);
+  }
+
+  actualizarTarejeta(card:Card,id:number){
+    return this.http.put(this.API_URL+'/cards/getOneUserCard'+id,card);
+  }
+
+  obtenerTarjeta(id){
+    return this.http.post(this.API_URL+'/getOneUserCard',id);
+  }
+
+
 }
