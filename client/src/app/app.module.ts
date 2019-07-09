@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
- 
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
@@ -14,6 +14,9 @@ import { VerPerfilComponent } from './components/ver-perfil/ver-perfil.component
 import { CrearTarjetasComponent } from './components/crear-tarjetas/crear-tarjetas.component';
 import { TarjetasService } from './services/cards/tarjetas.service';
 import { MyCardsComponent } from './components/my-cards/my-cards.component';
+import { BuscarTarjetaComponent } from './components/buscar-tarjeta/buscar-tarjeta.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { MyCardsComponent } from './components/my-cards/my-cards.component';
     GameListComponent,
     VerPerfilComponent,
     CrearTarjetasComponent,
-    MyCardsComponent
+    MyCardsComponent,
+    BuscarTarjetaComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
