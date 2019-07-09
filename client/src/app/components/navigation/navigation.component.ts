@@ -10,7 +10,7 @@ import { Router} from '@angular/router';
 })
 export class NavigationComponent implements OnInit {
   user: User = {
-    id: 0,
+    id: 1,
     nombre: '',
     apellido: '',
     nombre_usuario: '',
@@ -19,7 +19,7 @@ export class NavigationComponent implements OnInit {
     telefono: '',
     profesion: '',
     nivel_academico: '',
-    imagen: ''
+    image: ''
   };
   constructor(private userService: UserServiceService,
               private router: Router) { }

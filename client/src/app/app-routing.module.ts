@@ -10,7 +10,7 @@ import { BuscarTarjetaComponent } from './components/buscar-tarjeta/buscar-tarje
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/games',
+    redirectTo: '/',
     pathMatch: 'full'
   },
   {

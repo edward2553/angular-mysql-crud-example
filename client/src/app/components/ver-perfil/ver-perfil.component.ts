@@ -25,11 +25,12 @@ export class VerPerfilComponent implements OnInit {
     telefono: '',
     profesion: '',
     nivel_academico: '',
-    imagen: ''
+    image: '',
   };
 
   edit: boolean;
   showpwd = true;
+  image: string = '';
 
   verContrasena2(asds) {
     console.log(asds);
@@ -39,11 +40,14 @@ export class VerPerfilComponent implements OnInit {
   ngOnInit() {
 
     const paramsURL = this.activatedRouter.snapshot.params;
-    if (paramsURL.id) {
-      this.userService.getOneUser(paramsURL.id)
+    let id = parseInt(paramsURL.id);
+    if (id) {
+
+      this.userService.getOneUser(id)
       .subscribe(
         res => {
-          console.log(res);
+          console.log(res[0]);
+          this.image = res[0].image;
           this.user = res[0];
           this.edit = true;
         },

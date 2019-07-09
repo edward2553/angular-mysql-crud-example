@@ -2,41 +2,41 @@
 
   <div class="row margin">
     <!--Foto de perfil-->
-
+    <!-- <input type="text" name="title" class="form-control" placeholder="Title goes here" autofocus required [(ngModel)]="game.title" > -->
+          
     <div class="col-12 col-md-12 col-lg-12 text-center">
-      <img [src]=user.imagen class="img img-fluid" alt="Responsive image">
+      <img [src]=user.image class="img img-fluid" alt="Responsive image">
     </div>
   </div>
   <h4 class="text-divider marginTopNormal"><span>Información personal</span></h4>
   <div class="row">
     <div class="col-12 col-md-6 col-lg-6">
       <label for="nombre">nombre</label>
-      <input type="text" class="form-control-sm form-control" id="nombre" value="{{user.nombre}}">
+      <input type="text" class="form-control-sm form-control" id="nombre" [(ngModel)]="user.nombre">
     </div>
     <div class="col-12 col-md-6 col-lg-6">
       <label for="apellido">Apellido</label>
-      <input type="text" class="form-control-sm form-control" id="apellido" value="{{user.apellido}}">
+      <input type="text" class="form-control-sm form-control" id="apellido" [(ngModel)]="user.apellido">
     </div>
   </div>
   <div class="row marginTopNormal">
     <div class="col-12 col-md-6 col-lg-6">
       <label for="correo">Correo</label>
-      <input type="email" class="form-control-sm form-control" id="correo" value="{{user.correo}}">
+      <input type="email" class="form-control-sm form-control" id="correo" [(ngModel)]="user.correo">
     </div>
     <div class="col-12 col-md-6 col-lg-6">
       <label for="telefono">Telefono</label>
-      <input type="tel" class="form-control-sm form-control" id="telefono" value="{{user.telefono}}">
+      <input type="tel" class="form-control-sm form-control" id="telefono" [(ngModel)]="user.telefono">
     </div>
   </div>
   <div class="row marginTopNormal">
     <div class="col-12 col-md-6 col-lg-6">
       <label for="usuario">Usuario</label>
-      <input type="text" class="form-control-sm form-control" id="usuario" value="{{user.nombre_usuario}}">
+      <input type="text" class="form-control-sm form-control" id="usuario" [(ngModel)]="user.nombre_usuario">
     </div>
     <div class="col-10 col-md-4 col-lg-4">
       <label for="contrasena">Contraseña</label>
-      <input type="{{ verPassword ? 'text' : 'password' }}" class="form-control-sm form-control" id="contrasena"
-        value="{{user.contrasena}}">
+      <input type="{{ verPassword ? 'text' : 'password' }}" class="form-control-sm form-control" id="contrasena" [(ngModel)]="user.contrasena">
     </div>
     <div class="col-2 col-md-2 col-lg-2">
       <label for="verContrasena">Mostrar</label>
@@ -51,11 +51,11 @@
   <div class="row marginTopNormal">
     <div class="col-12 col-md-6 col-lg-6">
       <label for="Carrera">Carrera</label>
-      <input type="text" class="form-control-sm form-control" id="carrera" value="{{user.profesion}}">
+      <input type="text" class="form-control-sm form-control" id="carrera" [(ngModel)]="user.profesion">
     </div>
     <div class="col-12 col-md-6 col-lg-6">
       <label for="Nivel academico">Nivel académico</label>
-      <input type="text" class="form-control-sm form-control" id="Nacademico" value="{{user.nivel_academico}}">
+      <input type="text" class="form-control-sm form-control" id="Nacademico" [(ngModel)]="user.nivel_academico">
     </div>
   </div>
 
