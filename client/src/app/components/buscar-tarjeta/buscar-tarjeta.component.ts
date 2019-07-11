@@ -42,6 +42,16 @@ export class BuscarTarjetaComponent implements OnInit {
     });
   }
 
+  MostrarMensajeDeAlerta() {
+    console.log( this.tarjetas);
+    console.log( this.tarjetas.length);
+    const cantidad = this.tarjetas.length;
+    if (cantidad === 0) {
+      console.log('entro');
+      return true;
+    }
+    return false;
+  }
 
   buscarTarjeta(): any[] {
 

@@ -1,51 +1,56 @@
-<nav id="sidebar">
+<nav id="sidebar" class="sidebarPersonalizado" [ngStyle]="{'display': SidebarActivo ? 'block' : 'none'}">
   <div class="sidebar-header">
     <img src="../../../assets/imagen-usuario.png" class="imagen-usuario" alt="">
   </div>
   <ul class="list-unstyled components">
-    <li>
-      <a  id="precio">
-        <i class="fas fa-dollar-sign"></i>
-        <span class="icon-child icono-sidebar"></span>Precio
-        <div class="col-12">
-          <input type="number" class="form-control" id="precio_min" maxlength="10" placeholder="Min">
-        </div>
-        <div class="col-12">
-          <input type="number" class="form-control" id="precio_max" maxlength="10" placeholder="Max">
-        </div>
-      </a>
-    </li>
-    <li>
-      <a  id="fecha">
-        <i class="far fa-calendar-alt"></i>
-        <span class="icon-child icono-sidebar"></span>Fecha
-        <div class="col-12">
-          <input type="date" class="form-control" placeholder="desde" id="fecha_desde">
-        </div>
-        <div class="col-12">
-          <input type="date" class="form-control" placeholder="hasta" id="fecha_hasta">
-        </div>
-      </a>
-    </li>
-    <li>
-      <a id="precio">
-        <i class="fas fa-map-marker-alt"></i>
-        <span class="icon-child icono-sidebar"></span>Ubicaciòn
-        <div class="row">
+    <form [formGroup]="formGroup">
+
+
+      <li>
+        <a id="precio">
+          <i class="fas fa-dollar-sign"></i>
+          <span class="icon-child icono-sidebar"></span>Precio
           <div class="col-12">
-            <select class="custom-select" id="inputGroupSelect01">
-              <option selected>Seleccione...</option>
-              <option>Barranquilla</option>
-              <option>Bogota</option>
-              <option>Cali</option>
-              <option>Cartagena</option>
-              <option>Medellin</option>
-              <option>Santa Marta</option>
-            </select>
+            <input type="number" class="form-control" id="precio_min" maxlength="10" placeholder="Min" formControlName="preciomin">
           </div>
-        </div>
-      </a>
-    </li>
-    <button class="btn btn-outline-success my-2 my-sm-0 btnBuscar" type="submit">Buscar</button>
+          <div class="col-12">
+            <input type="number" class="form-control" id="precio_max" maxlength="10" placeholder="Max" formControlName="preciomax">
+          </div>
+        </a>
+      </li>
+      <li>
+        <a id="fecha">
+          <i class="far fa-calendar-alt"></i>
+          <span class="icon-child icono-sidebar"></span>Fecha
+          <div class="col-12">
+            <input type="date" class="form-control" placeholder="desde" id="fecha_desde" formControlName="desdefecha">
+          </div>
+          <div class="col-12">
+            <input type="date" class="form-control" placeholder="hasta" id="fecha_hasta" formControlName="hastafecha">
+          </div>
+        </a>
+      </li>
+      <li>
+        <a id="precio">
+          <i class="fas fa-map-marker-alt"></i>
+          <span class="icon-child icono-sidebar"></span>Ubicaciòn
+          <div class="row">
+            <div class="col-12">
+              <select class="custom-select selectPersonalizado" id="inputGroupSelect01" formControlName="inputGroupSelect01">
+                <option selected>Seleccione...</option>
+                <option>Barranquilla</option>
+                <option>Bogota</option>
+                <option>Cali</option>
+                <option>Cartagena</option>
+                <option>Medellin</option>
+                <option>Santa Marta</option>
+              </select>
+            </div>
+          </div>
+        </a>
+      </li>
+      <button class="btn btn-outline-success my-2 my-sm-0 btnBuscar" type="submit" (click)="clickEnbtnSidebar()">Buscar</button>
+
+    </form>
   </ul>
 </nav>

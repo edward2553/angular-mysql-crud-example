@@ -16,6 +16,7 @@ import { TarjetasService } from './services/cards/tarjetas.service';
 import { MyCardsComponent } from './components/my-cards/my-cards.component';
 import { BuscarTarjetaComponent } from './components/buscar-tarjeta/buscar-tarjeta.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     GamesService,

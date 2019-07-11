@@ -10,8 +10,7 @@ import { BuscarTarjetaComponent } from './components/buscar-tarjeta/buscar-tarje
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/',
-    pathMatch: 'full'
+    component: GameListComponent
   },
   {
     path: 'games',
@@ -38,7 +37,7 @@ const routes: Routes = [
     component: MyCardsComponent
   },
   {
-    path: "cards/edit/:edit",
+    path: 'cards/edit/:edit',
     component: CrearTarjetasComponent
   },
   { path: 'buscar/:termino',

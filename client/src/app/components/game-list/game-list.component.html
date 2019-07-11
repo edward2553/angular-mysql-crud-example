@@ -1,6 +1,6 @@
 <app-sidebar></app-sidebar>
-<div class="card-columns  mt-3 buscar">
-  <div class="card" *ngFor="let game of GAMES_ARRAY">
+<div class="card-columns  mt-3 buscar container">
+  <div class="card tarjetaPersonalizada" *ngFor="let game of GAMES_ARRAY">
     <img [src]=game.image class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{game.title}}</h5>
