@@ -56,11 +56,14 @@ class cardsController {
             res.json({ "message": "cards has been successfully updated" });
         });
     }
-    update(req, res) {
+    list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const id = parseInt(req.params.id_update, 10);
-            yield database_1.default.query("update games set ? where id = ?", [req.body, id]);
-            res.json({ "message": "game " + id + " has been updated successfully" });
+            yield database_1.default.query("select * from tarjetas", (err, rows, fields) => {
+                if (!err)
+                    res.json(rows);
+                else
+                    console.log(err);
+            });
         });
     }
 }

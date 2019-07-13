@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GamesService } from '../../services/games.service';
+import { TarjetasService } from './../../services/cards/tarjetas.service';
 
 
 @Component({
@@ -14,24 +15,28 @@ export class BuscarTarjetaComponent implements OnInit {
   tarjetasres;
   termino: string;
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private gameServices: GamesService) {
+  constructor(private activatedRoute: ActivatedRoute,private gameServices: GamesService , private cardsService: TarjetasService) {
 
   }
 
   ngOnInit() {
 
-    this.gameServices.getGames().subscribe(
-      res => {
-          this.tarjetas = res;
-          this.tarjetasres = res;
-          console.log(res);
-          this.metodoQueEsperaQueCopien();
+    this.getAllCards();
+    this.metodoQueEsperaQueCopien();
+
+
+  }
+
+  getAllCards(){
+    this.cardsService.getAllCards().subscribe(
+      res =>{
+        console.log(res),
+        this.tarjetas = res;
+        this.tarjetasres = res;
       },
-      err => console.error(err)
+     err=>
+      console.log(err)
     );
-
-
   }
 
   metodoQueEsperaQueCopien() {

@@ -41,13 +41,16 @@ class cardsController{
       res.json({"message":"cards has been successfully updated"});
     }
 
-    
-    public async update(req: Request, res: Response):Promise<void>{
-      const  id  = parseInt(req.params.id_update,10); 
-      await con.query("update games set ? where id = ?",[req.body,id]);
-      res.json({"message":"game "+id+" has been updated successfully"});
+  public async list(req:Request, res:Response):Promise<void>{
+    await con.query("select * from tarjetas",(err:any,rows:any,fields:any)=>{
+      if(!err)
+        res.json(rows);
+      else
+        console.log(err);  
+    });
   }
 }
+
 
 const cardsClass = new cardsController(); 
 export default cardsClass;

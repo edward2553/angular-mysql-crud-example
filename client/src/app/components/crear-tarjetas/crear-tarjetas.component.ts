@@ -21,6 +21,7 @@ export class CrearTarjetasComponent implements OnInit {
     precio : 0,
     image: ''
   };
+
   edit:boolean = false;
   constructor(private cardService: TarjetasService,private router:Router, private activatedRoute:ActivatedRoute) { }
 
@@ -31,6 +32,14 @@ export class CrearTarjetasComponent implements OnInit {
       this.obtenerTarjeta();
     }
 
+  }
+
+  guardarOEditar(){
+    if(this.edit){
+      
+    }else{
+      this.guardarTarjeta();
+    }
   }
 
   guardarTarjeta(){
@@ -52,5 +61,9 @@ export class CrearTarjetasComponent implements OnInit {
       err => console.log(err)
     );
   }  
+
+  editarTarjeta(){
+
+  }
 
 }

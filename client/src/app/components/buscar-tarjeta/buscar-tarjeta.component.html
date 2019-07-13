@@ -11,7 +11,7 @@
 
 </div>
 
-<div class="card-columns  mt-3">
+<!-- <div class="card-columns  mt-3">
   <div class="card" *ngFor="let game of tarjetas">
     <img [src]=game.image class="card-img-top" alt="...">
     <div class="card-body">
@@ -20,6 +20,22 @@
       <p class="card-text"><small class="text-muted">
         <button [routerLink]="['/games/edit',game.id]" type="button" class="btn btn-outline-info btn-block">Edit</button>
           <button type="button" [routerLink]="['/games']" class="btn btn-outline-danger btn-block" (click)="deleteGame(game.id)">Delete</button>
+        </small></p>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="card-columns  mt-3">
+  <div class="card" *ngFor="let cards of tarjetas">
+    <img [src]=cards.image class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{cards.title}}</h5>
+      <p class="card-text">{{cards.description}}</p>
+      <p class="card-text">{{cards.precio}}</p>
+      <p class="card-text"><small class="text-muted">
+          <button [routerLink]="['/cards/edit',true]" type="button" class="btn btn-outline-info btn-block">Edit</button>
+          <button type="button" class="btn btn-outline-danger btn-block" (click)="deleteCard(cards.id)">Delete</button>
         </small></p>
     </div>
   </div>

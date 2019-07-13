@@ -16,6 +16,7 @@ class CardRoutes {
         this.router.delete('/deleteCard/:id_delete', cardsController_1.default.deletecard);
         this.router.post('/getOneUserCard', cardsController_1.default.getOneUserCard);
         this.router.put('/updateUser/:id_update', cardsController_1.default.updateCard);
+        this.router.get('/', cardsController_1.default.list);
     }
 }
 const cardsRoutes = new CardRoutes();

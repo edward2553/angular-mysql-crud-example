@@ -28,7 +28,11 @@ export class TarjetasService {
   }
 
   obtenerTarjeta(id){
-    return this.http.post(this.API_URL+'/getOneUserCard',id);
+    return this.http.post(this.API_URL+'/cards/getOneUserCard',id);
+  }
+
+  getAllCards(){
+    return this.http.get(this.API_URL+'/cards');
   }
 
 
