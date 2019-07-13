@@ -24,7 +24,7 @@ export class TarjetasService {
   }
 
   actualizarTarejeta(card:Card,id:number){
-    return this.http.put(this.API_URL+'/cards/getOneUserCard'+id,card);
+    return this.http.put(this.API_URL+'/cards/updateCard/'+id,card);
   }
 
   obtenerTarjeta(id){

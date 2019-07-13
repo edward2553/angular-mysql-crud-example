@@ -38,7 +38,7 @@ const routes: Routes = [
     component: MyCardsComponent
   },
   {
-    path: "cards/edit/:edit",
+    path: 'cards/edit/:edit',
     component: CrearTarjetasComponent
   },
   { path: 'buscar/:termino',

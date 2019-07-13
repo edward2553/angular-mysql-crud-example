@@ -13,7 +13,7 @@ class CardRoutes{
         this.router.post('/getUserCards',cardsController.getUserCards);
         this.router.delete('/deleteCard/:id_delete',cardsController.deletecard);
         this.router.post('/getOneUserCard',cardsController.getOneUserCard);
-        this.router.put('/updateUser/:id_update',cardsController.updateCard);
+        this.router.put('/updateCard/:id_update',cardsController.updateCard);
         this.router.get('/',cardsController.list);
     }
 }

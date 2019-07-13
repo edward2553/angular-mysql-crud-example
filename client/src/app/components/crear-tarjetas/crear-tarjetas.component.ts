@@ -37,7 +37,7 @@ export class CrearTarjetasComponent implements OnInit {
 
   guardarOEditar(){
     if(this.edit){
-      
+      this.editarTarjeta();
     }else{
       this.guardarTarjeta();
     }
@@ -64,7 +64,14 @@ export class CrearTarjetasComponent implements OnInit {
   }  
 
   editarTarjeta(){
-
+    this.cardService.actualizarTarejeta(this.card,this.card.id).subscribe(
+      res =>{
+        console.log(res);
+        this.router.navigate(['/cards/myCards']);
+      },
+      err=>
+        console.log(err)
+    );
   }
 
 }
