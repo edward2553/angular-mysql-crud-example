@@ -1,4 +1,4 @@
-<br>
+<!-- <br>
 <div class="row container">
   <div class="col-12 col-md-6 col-lg-6">
     <div class="card">
@@ -7,7 +7,7 @@
           Crea tu tarjeta personalizada
         </h5>
         <h6 class="card-subtitle mb-2 text-muted">Los campos con * son obligatorios</h6>
-        <!-- formulario para agregar la info de la tarjeta -->
+         formulario para agregar la info de la tarjeta
         <div class="container">
           <form name="form1" #form="ngForm">
             <div class="row">
@@ -55,4 +55,48 @@
           </div>
         </div>
   </div>
+  </div> -->
+  <br>
+<br>
+<div class="row container">
+  <div class="col-sm-12 col-md-6 col-lg-6">
+    <div class="card">
+      <div class="card-head text-center">
+        <br>
+          <h4>Agregar tarjeta</h4>
+      </div>
+      <div class="card-body">
+          <div class="fomr-group">
+              <input type="text" name="title" class="form-control" placeholder="Title goes here" autofocus required [(ngModel)]="card.title" >
+          </div>
+          <br>
+          <form>
+          <div class="fomr-group">
+            <textarea name="description" placeholder="Description" rows="2" class="form-control" autofocus required="" [(ngModel)]="card.description" ></textarea>
+          </div>
+          <br>
+          <div class="fomr-group">
+              <input type="url" name="image" class="form-control" placeholder="URL image goes here" autofocus [(ngModel)]="card.image" >
+          </div>
+          <br>
+          <!-- <button class="btn btn-success btn-block" (click)="edit ? updateGame(game.id) : saveNewGame()">save</button> -->
+        </form>
+      </div>
+    </div>
   </div>
+  <div class="col-sm-12 col-md-6 col-lg-6">
+    <div class="card card-body text-center">
+        <img [src]="card.image == '' ? '/assets/default-image-game.jpg' : card.image  " class="img-card">
+        <br>
+        <h3> {{card.title == '' ? 'Game Title' : card.title}}</h3>
+        <br>
+        <p>{{card.description == '' ? 'Description goes here' : card.description}}</p>
+        <br>
+        <!-- <p>{{ game.created_at | date: 'yyyy-MM-dd'}}</p> -->
+    </div>
+  </div>
+</div>
+
+
+
+

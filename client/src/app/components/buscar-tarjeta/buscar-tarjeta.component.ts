@@ -15,7 +15,7 @@ export class BuscarTarjetaComponent implements OnInit {
   tarjetasres;
   termino: string;
 
-  constructor(private activatedRoute: ActivatedRoute,private gameServices: GamesService , private cardsService: TarjetasService) {
+  constructor(private activatedRoute: ActivatedRoute, private gameServices: GamesService , private cardsService: TarjetasService) {
 
   }
 
@@ -27,14 +27,14 @@ export class BuscarTarjetaComponent implements OnInit {
 
   }
 
-  getAllCards(){
+  getAllCards() {
     this.cardsService.getAllCards().subscribe(
-      res =>{
+      res => {
         console.log(res),
         this.tarjetas = res;
         this.tarjetasres = res;
       },
-     err=>
+     err =>
       console.log(err)
     );
   }

@@ -29,6 +29,7 @@ export class CrearTarjetasComponent implements OnInit {
     const params = this.activatedRoute.snapshot.params;
     this.edit = params.edit;
     if(this.edit){
+      console.log("editar:"+this.edit);
       this.obtenerTarjeta();
     }
 
