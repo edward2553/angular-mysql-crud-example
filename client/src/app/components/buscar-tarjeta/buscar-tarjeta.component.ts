@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GamesService } from '../../services/games.service';
+import con from '../../../../../server/src/database';
 
 
 @Component({
@@ -10,12 +11,12 @@ import { GamesService } from '../../services/games.service';
 })
 
 export class BuscarTarjetaComponent implements OnInit {
-  tarjetas ;
+  tarjetas;
   tarjetasres;
   termino: string;
+  arraySidebar: any[];
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private gameServices: GamesService) {
+  constructor(private activatedRoute: ActivatedRoute, private gameServices: GamesService) {
 
   }
 
@@ -23,10 +24,9 @@ export class BuscarTarjetaComponent implements OnInit {
 
     this.gameServices.getGames().subscribe(
       res => {
-          this.tarjetas = res;
-          this.tarjetasres = res;
-          console.log(res);
-          this.metodoQueEsperaQueCopien();
+        this.tarjetas = res;
+        this.tarjetasres = res;
+        this.metodoQueEsperaQueCopien();
       },
       err => console.error(err)
     );
@@ -37,14 +37,22 @@ export class BuscarTarjetaComponent implements OnInit {
   metodoQueEsperaQueCopien() {
     this.activatedRoute.params.subscribe(params => {
       const palabraABuscar = 'termino';
-      this.termino = params[palabraABuscar];
-      this.tarjetas = this.buscarTarjeta();
+      const arraySidebar = 'arraySidebar';
+
+      if (params[palabraABuscar] !== undefined) {
+        this.termino = params[palabraABuscar];
+        this.tarjetas = this.buscarTarjeta();
+      }
+      console.log(params[arraySidebar]);
+      if (params[arraySidebar] !== undefined) {
+        this.arraySidebar = params[arraySidebar];
+      }
     });
   }
 
   MostrarMensajeDeAlerta() {
-    console.log( this.tarjetas);
-    console.log( this.tarjetas.length);
+    console.log(this.tarjetas);
+    console.log(this.tarjetas.length);
     const cantidad = this.tarjetas.length;
     if (cantidad === 0) {
       console.log('entro');
@@ -60,13 +68,13 @@ export class BuscarTarjetaComponent implements OnInit {
     const gamesArray: any[] = [];
     this.termino = this.termino.toLowerCase();
 
-    for (let i = 0 ; i < this.tarjetasres.length; i++) {
+    for (let i = 0; i < this.tarjetasres.length; i++) {
 
       const game = this.tarjetasres[i];
 
       const title = game.title.toLowerCase();
       const descripcion = game.description.toLowerCase();
-      if ((title.indexOf( this.termino ) >= 0 ) || (descripcion.indexOf( this.termino ) >= 0 )) {
+      if ((title.indexOf(this.termino) >= 0) || (descripcion.indexOf(this.termino) >= 0)) {
         game.idx = i;
         gamesArray.push(game);
       }

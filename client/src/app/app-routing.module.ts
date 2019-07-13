@@ -43,6 +43,9 @@ const routes: Routes = [
   { path: 'buscar/:termino',
    component: BuscarTarjetaComponent
   },
+  { path: 'buscar/:arraySidebar',
+   component: BuscarTarjetaComponent
+  },
 ];
 
 @NgModule({
