@@ -9,7 +9,6 @@ import { GameFormComponent } from './components/game-form/game-form.component';
 import { GameListComponent } from './components/game-list/game-list.component';
 import { GamesService } from './services/games.service';
 import { UserServiceService } from './services/user/user-service.service';
-import { DatasourceService} from './services/datasource.service';
 import { FormsModule } from '@angular/forms';
 import { VerPerfilComponent } from './components/ver-perfil/ver-perfil.component';
 import { CrearTarjetasComponent } from './components/crear-tarjetas/crear-tarjetas.component';
@@ -40,8 +39,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
   providers: [
     GamesService,
     UserServiceService,
-    TarjetasService,
-    DatasourceService
+    TarjetasService
   ],
   bootstrap: [AppComponent]
 })
