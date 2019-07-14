@@ -21,9 +21,13 @@ export class NavigationComponent implements OnInit {
     nivel_academico: '',
     image: ''
   };
+
+
   constructor(private userService: UserServiceService,
               private router: Router) { }
 
+              public isLogged: boolean = false;
+              public isnotLogged: boolean = true;
   ngOnInit() {
     // this.obtenerUsuario(1);
   }

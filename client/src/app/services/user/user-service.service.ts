@@ -1,7 +1,7 @@
+import { User } from './../../models/User';
 import { Injectable } from '@angular/core';
 //encargado de hacer las peticiones http
 import { HttpClient } from '@angular/common/http';
-import { User } from '../../models/User';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -20,4 +20,10 @@ export class UserServiceService {
     return this.http.put(this.API_URI+'/user/'+id,user);
   }
 
+
+  UserValidation(user:User){
+    console.log('usuario', user.nombre_usuario);
+    console.log('contraseña', user.contrasena);
+    return this.http.get(this.API_URI + '/user/userLogin/'+user.nombre_usuario+'/'+user.contrasena);
+  }
 }

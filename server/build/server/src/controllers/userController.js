@@ -24,7 +24,7 @@ class userController {
     }
     getUserLogin(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query("select * from usuario where nombre_usuario =" + "'" + req.params.id + "'" + " and contrasena=" + "'" + req.params.password + "'" + "", (err, rows, fieds) => {
+            yield database_1.default.query("select * from usuario where nombre_usuario =" + '' + req.params.user + '' + " and contrasena=" + '' + req.params.password + '' + "", (err, rows, fieds) => {
                 if (!err)
                     res.json(rows);
                 else

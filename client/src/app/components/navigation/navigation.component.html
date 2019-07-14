@@ -15,29 +15,40 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
 
-        <li class="nav-item">
+        <li class="nav-item"  *ngIf="isLogged">
           <img src="../../assets/perfil.jpg" class="img" alt="...">
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/tarjetas" routerLinkActive="active"><i class="fas fa-gamepad"></i>Usuario</a>
-        </li>
-        <li class="nav-item">
+        
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/games" routerLinkActive="active"><i class="fas fa-gamepad"></i>Usuario</a>
+        </li> -->
+        
+        <li class="nav-item"  *ngIf="isLogged">
           <a class="nav-link" routerLink="/cards/add" routerLinkActive="active"><i class="fas fa-plus-circle"></i>
             Agregar tarjeta </a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Opciones
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]="['/perfil/',user.id]">Perfil</a>
-            <a class="dropdown-item" routerLink="/cards/myCards">Mis Tarjetas</a>
-            <a class="dropdown-item" routerLink="/cards/favorites">Favoritas</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Salir</a>
-          </div>
-        </li>
+        <li class="nav-item" *ngIf="isLogged">
+          <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                opciones
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" routerLink="/user/profile">perfil</a>
+                <a class="dropdown-item" href="#">tarjetasGuardadas</a>
+                <a class="dropdown-item" href="#">mistarjetas</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" (click)="onLogout()">salir</a>
+              </div>
+            </div>
+      </li>
+      <li class="nav-item" *ngIf="isnotLogged">
+        <a class="nav-link" routerLink="/user/register">Register
+        </a>
+      </li> 
+      <li class="nav-item" *ngIf="isnotLogged">
+        <a class="nav-link" routerLink="games/login">Login
+        </a>
+      </li>
       </ul>
     </div>
   </div>

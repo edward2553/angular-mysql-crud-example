@@ -17,7 +17,7 @@ import { MyCardsComponent } from './components/my-cards/my-cards.component';
 import { BuscarTarjetaComponent } from './components/buscar-tarjeta/buscar-tarjeta.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MisTarjetasFavoritasComponent } from './components/mis-tarjetas-favoritas/mis-tarjetas-favoritas.component';
-
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { MisTarjetasFavoritasComponent } from './components/mis-tarjetas-favorit
     MyCardsComponent,
     BuscarTarjetaComponent,
     SidebarComponent,
-    MisTarjetasFavoritasComponent
+    MisTarjetasFavoritasComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
