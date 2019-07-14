@@ -10,60 +10,60 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CrearTarjetasComponent implements OnInit {
 
-  id ={
-    "id":4
+  id = {
+    "id": 4
   }
 
-  card:Card = {
-    id_persona:1,
-    title : '',
-    description : '',
-    precio : 0,
+  card: Card = {
+    id_persona: 1,
+    title: '',
+    description: '',
+    precio: 0,
     image: ''
   };
 
-  edit:boolean = false;
-  constructor(private cardService: TarjetasService,private router:Router, private activatedRoute:ActivatedRoute) { }
+  edit: boolean = false;
+  constructor(private cardService: TarjetasService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     const params = this.activatedRoute.snapshot.params;
     this.edit = params.edit;
-    if(this.edit){
-      console.log("editar:"+this.edit);
+    if (this.edit) {
+      console.log("editar:" + this.edit);
       this.obtenerTarjeta();
     }
 
   }
 
-  guardarOEditar(){
-    if(this.edit){
-      
-    }else{
+  guardarOEditar() {
+    if (this.edit) {
+
+    } else {
       this.guardarTarjeta();
     }
   }
 
-  guardarTarjeta(){
+  guardarTarjeta() {
     this.cardService.saveCard(this.card).subscribe(
-      res =>{
+      res => {
         console.log(res)
-        this.router.navigate(['/games']);
+        this.router.navigate(['/tarjetas']);
       },
       err => console.log(err)
     );
   }
 
-  obtenerTarjeta(){
+  obtenerTarjeta() {
     this.cardService.obtenerTarjeta(this.id).subscribe(
-      res =>{
+      res => {
         console.log(res);
         this.card = res[0];
       },
       err => console.log(err)
     );
-  }  
+  }
 
-  editarTarjeta(){
+  editarTarjeta() {
 
   }
 

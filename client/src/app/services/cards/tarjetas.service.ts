@@ -8,31 +8,31 @@ import { Card } from './../../models/card';
 })
 export class TarjetasService {
 
-  API_URL = "http://localhost:3000/api";
+  API_URL = 'http://localhost:3000/api';
   constructor(private http: HttpClient) { }
 
-  saveCard(card:Card){
-    return this.http.post(this.API_URL+'/cards',card);
+  saveCard(card: Card) {
+    return this.http.post(this.API_URL + '/cards', card);
   }
 
-  getUserCards(id){
-    return this.http.post(this.API_URL+'/cards/getUserCards',id);
+  getUserCards(id) {
+    return this.http.post(this.API_URL + '/cards/getUserCards', id);
   }
 
-  deleteCard(id: number){
-    return this.http.delete(this.API_URL+'/cards/deleteCard/'+id);
+  deleteCard(id: number) {
+    return this.http.delete(this.API_URL + '/cards/deleteCard/' + id);
   }
 
-  actualizarTarejeta(card:Card,id:number){
-    return this.http.put(this.API_URL+'/cards/getOneUserCard'+id,card);
+  actualizarTarejeta(card: Card, id: number) {
+    return this.http.put(this.API_URL + '/cards/getOneUserCard' + id, card);
   }
 
-  obtenerTarjeta(id){
-    return this.http.post(this.API_URL+'/cards/getOneUserCard',id);
+  obtenerTarjeta(id) {
+    return this.http.post(this.API_URL + '/cards/getOneUserCard', id);
   }
 
-  getAllCards(){
-    return this.http.get(this.API_URL+'/cards');
+  getAllCards() {
+    return this.http.get(this.API_URL + '/cards');
   }
 
 

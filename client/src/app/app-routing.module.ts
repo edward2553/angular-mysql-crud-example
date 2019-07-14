@@ -8,21 +8,17 @@ import { MyCardsComponent } from './components/my-cards/my-cards.component';
 import { BuscarTarjetaComponent } from './components/buscar-tarjeta/buscar-tarjeta.component';
 
 const routes: Routes = [
+  { path: '', component: GameListComponent },
   {
-    path: '',
-    redirectTo: '/',
-    pathMatch: 'full'
-  },
-  {
-    path: 'games',
+    path: 'tarjetas',
     component: GameListComponent
   },
   {
-    path: 'games/add',
+    path: 'tarjetas/add',
     component: GameFormComponent
   },
   {
-    path: 'games/edit/:id',
+    path: 'tarjetas/edit/:id',
     component: GameFormComponent
   },
   {
@@ -38,11 +34,12 @@ const routes: Routes = [
     component: MyCardsComponent
   },
   {
-    path: "cards/edit/:edit",
+    path: 'cards/edit/:edit',
     component: CrearTarjetasComponent
   },
-  { path: 'buscar/:termino',
-   component: BuscarTarjetaComponent
+  {
+    path: 'buscar/:termino',
+    component: BuscarTarjetaComponent
   },
 ];
 

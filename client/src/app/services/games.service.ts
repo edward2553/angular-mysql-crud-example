@@ -14,22 +14,22 @@ export class GamesService {
 
   getGames() {
 
-    return this.http.get(this.API_URI + '/games');
+    return this.http.get(this.API_URI + '/tarjetas');
   }
 
   getGame(id: string) {
-    return this.http.get(this.API_URI + '/games/' + id);
+    return this.http.get(this.API_URI + '/tarjetas/' + id);
   }
 
   saveGame(game: Game) {
-    return this.http.post(this.API_URI + '/games', game);
+    return this.http.post(this.API_URI + '/tarjetas', game);
   }
 
   updateGame(id: string, updatedgame: Game): Observable<Game> {
-    return this.http.put(this.API_URI + '/games/' + id, updatedgame);
+    return this.http.put(this.API_URI + '/tarjetas/' + id, updatedgame);
   }
 
   deleteGame(id: string) {
-    return this.http.delete(this.API_URI + '/games/' + id);
+    return this.http.delete(this.API_URI + '/tarjetas/' + id);
   }
 }

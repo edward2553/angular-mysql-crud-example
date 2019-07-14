@@ -27,7 +27,7 @@ class Server {
     }
     routes() {
         this.app.use('/', indexRoutes_1.default);
-        this.app.use('/api/games', gameRoutes_1.default);
+        this.app.use('/api/tarjetas', gameRoutes_1.default);
         this.app.use('/api/user', userRoutes_1.default);
         this.app.use('/api/cards', cardsRoutes_1.default);
     }
