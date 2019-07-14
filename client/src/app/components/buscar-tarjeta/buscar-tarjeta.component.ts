@@ -51,9 +51,10 @@ export class BuscarTarjetaComponent implements OnInit {
   buscarTarjeta(): any[] {
 
 
-
+    console.log(this.termino);
     const gamesArray: any[] = [];
     this.termino = this.termino.toLowerCase();
+    console.log(this.tarjetasres);
 
     for (let i = 0 ; i < this.tarjetasres.length; i++) {
 

@@ -60,7 +60,7 @@ export class VerPerfilComponent implements OnInit {
     this.userService.updateUser(id, this.user).subscribe(
       res => {
         console.log(res);
-        this.router.navigate(['/games']);
+        this.router.navigate(['/tarjetas']);
       },
       err => console.error(err)
     );

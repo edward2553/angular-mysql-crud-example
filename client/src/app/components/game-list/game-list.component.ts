@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { GamesService } from '../../services/games.service';
+import { TarjetasService } from '../../services/cards/tarjetas.service';
 
 @Component({
   selector: 'app-game-list',
@@ -7,24 +8,25 @@ import { GamesService } from '../../services/games.service';
   styleUrls: ['./game-list.component.css']
 })
 export class GameListComponent implements OnInit {
-
-  GAMES_ARRAY: any = [];
-  constructor(private gameServices: GamesService) {}
+  tarjetas ;
+  constructor(private gameServices: GamesService,  private cardsService: TarjetasService) {}
 
   ngOnInit() {
-  // subscribe
-    this.getGames();
+
+    this.getAllCards();
   }
 
-  getGames() {
-    console.log(this.gameServices);
-    this.gameServices.getGames().subscribe(
+  getAllCards() {
+    this.cardsService.getAllCards().subscribe(
       res => {
-          this.GAMES_ARRAY = res;
+        console.log(res),
+        this.tarjetas = res;
       },
-      err => console.error(err)
+     err =>
+      console.log(err)
     );
   }
+
   deleteGame(id: string) {
     this.gameServices.deleteGame(id).subscribe(
       res => {
@@ -32,7 +34,6 @@ export class GameListComponent implements OnInit {
       },
       err => console.error(err)
     );
-    this.getGames();
   }
 
 

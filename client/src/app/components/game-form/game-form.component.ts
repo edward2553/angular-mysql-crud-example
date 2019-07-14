@@ -38,7 +38,7 @@ export class GameFormComponent implements OnInit {
     this.gameService.saveGame(this.game).subscribe(
       res => {
         console.log(res);
-        this.router.navigate(['/games']);
+        this.router.navigate(['/tarjetas']);
       },
       err => console.error(err)
     );
@@ -48,7 +48,7 @@ export class GameFormComponent implements OnInit {
     this.gameService.updateGame(id, this.game).subscribe(
       res => {
         console.log(res);
-        this.router.navigate(['/games']);
+        this.router.navigate(['/tarjetas']);
       },
       err => console.error(err)
     );
