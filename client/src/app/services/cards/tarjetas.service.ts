@@ -35,5 +35,20 @@ export class TarjetasService {
     return this.http.get(this.API_URL + '/cards');
   }
 
+  agregarAFavorita(id_persona:number,id_tarjeta:number){
+    let body = {
+      "id_persona":id_persona,
+      "id_tarjeta":id_tarjeta
+    }
+    return this.http.post(this.API_URL + '/cards/addCardToFavorite',body);
+  }
 
+  getfaviroteCards(){
+    return this.http.get(this.API_URL + '/cards/getfaviroteCards');
+  }
+
+
+  deleteFromFavorite(id:number){
+    return this.http.delete(this.API_URL + '/cards/deleteFromFavorite/' + id);
+  }
 }

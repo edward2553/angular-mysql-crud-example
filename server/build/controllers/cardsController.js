@@ -66,6 +66,33 @@ class cardsController {
             });
         });
     }
+    addToFavorite(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield database_1.default.query("insert into tarjetas_guardadas set ?", [req.body]);
+            res.json({ "mesagge": "cards has been added to your favorites" });
+        });
+    }
+    getfaviroteCards(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield database_1.default.query("select * from tarjetas_guardadas inner join tarjetas on tarjetas_guardadas.id_persona = tarjetas.id_persona AND tarjetas_guardadas.id_tarjeta = tarjetas.id_tarjeta", (err, rows, fields) => {
+                if (!err)
+                    res.json(rows);
+                else
+                    console.log(err);
+            });
+        });
+    }
+    deleteFromFavorite(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            var id = parseInt(req.params.id);
+            yield database_1.default.query("delete from tarjetas_guardadas where id =" + '' + id + '' + "", (err, rows, fields) => {
+                if (!err)
+                    res.json({ "message": "card successfully deleted" });
+                else
+                    console.log(err);
+            });
+        });
+    }
 }
 const cardsClass = new cardsController();
 exports.default = cardsClass;

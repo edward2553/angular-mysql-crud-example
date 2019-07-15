@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GamesService } from '../../services/games.service';
 import { TarjetasService } from './../../services/cards/tarjetas.service';
 
 
@@ -15,7 +14,7 @@ export class BuscarTarjetaComponent implements OnInit {
   tarjetasres;
   termino: string;
 
-  constructor(private activatedRoute: ActivatedRoute, private gameServices: GamesService , private cardsService: TarjetasService) {
+  constructor(private activatedRoute: ActivatedRoute, private cardsService: TarjetasService) {
 
   }
 
@@ -25,6 +24,17 @@ export class BuscarTarjetaComponent implements OnInit {
     this.metodoQueEsperaQueCopien();
 
 
+  }
+
+  aggToFavorite(id_persona:number,id_tarjeta:number){
+    console.log("id de la tarjeta = "+id_tarjeta);
+    this.cardsService.agregarAFavorita(id_persona,id_tarjeta).subscribe(
+      res => {
+        console.log(res);
+      },
+      err =>
+        console.log(err)
+    );
   }
 
   getAllCards() {

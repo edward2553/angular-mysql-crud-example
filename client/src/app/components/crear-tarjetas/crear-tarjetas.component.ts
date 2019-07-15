@@ -47,7 +47,7 @@ export class CrearTarjetasComponent implements OnInit {
     this.cardService.saveCard(this.card).subscribe(
       res => {
         console.log(res)
-        this.router.navigate(['/tarjetas']);
+        this.router.navigate(['/cards/myCards']);
       },
       err => console.log(err)
     );

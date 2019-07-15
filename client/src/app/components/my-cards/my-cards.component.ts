@@ -31,6 +31,7 @@ export class MyCardsComponent implements OnInit {
 
   
   deleteCard(id:number){
+    console.log("el id eliminar es:"+ id);
     this.cardService.deleteCard(id).subscribe(
       res =>{
         this.mensajeBorrado = res;

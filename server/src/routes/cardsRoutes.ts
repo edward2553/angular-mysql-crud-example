@@ -14,6 +14,9 @@ class CardRoutes{
         this.router.delete('/deleteCard/:id_delete',cardsController.deletecard);
         this.router.post('/getOneUserCard',cardsController.getOneUserCard);
         this.router.put('/updateCard/:id_update',cardsController.updateCard);
+        this.router.post('/addCardToFavorite',cardsController.addToFavorite);
+        this.router.get('/getfaviroteCards',cardsController.getfaviroteCards);
+        this.router.delete('/deleteFromFavorite/:id',cardsController.deleteFromFavorite);
         this.router.get('/',cardsController.list);
     }
 }
