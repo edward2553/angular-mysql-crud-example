@@ -32,6 +32,16 @@ class userController {
             res.json({ "message": "game " + id + " has been updated successfully" });
         });
     }
+    getUserAndgetPassword(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield database_1.default.query("select * from usuario where id =" + '' + req.params.id_getOneUser + '' + "", (err, rows, fieds) => {
+                if (!err)
+                    res.json(rows);
+                else
+                    console.log(err);
+            });
+        });
+    }
 }
 const userClass = new userController();
 exports.default = userClass;
