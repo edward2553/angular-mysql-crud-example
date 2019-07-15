@@ -6,13 +6,9 @@ import { VerPerfilComponent } from './components/ver-perfil/ver-perfil.component
 import { CrearTarjetasComponent } from './components/crear-tarjetas/crear-tarjetas.component';
 import { MyCardsComponent } from './components/my-cards/my-cards.component';
 import { BuscarTarjetaComponent } from './components/buscar-tarjeta/buscar-tarjeta.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/',
-    pathMatch: 'full'
-  },
   {
     path: 'games',
     component: GameListComponent
@@ -44,6 +40,14 @@ const routes: Routes = [
   { path: 'buscar/:termino',
    component: BuscarTarjetaComponent
   },
+  { path: 'games/login',
+  component: LoginComponent
+ },
+ {
+  path: '',
+  redirectTo: '/',
+  pathMatch: 'full'
+},
 ];
 
 @NgModule({

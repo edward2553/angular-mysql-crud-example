@@ -16,6 +16,7 @@ import { TarjetasService } from './services/cards/tarjetas.service';
 import { MyCardsComponent } from './components/my-cards/my-cards.component';
 import { BuscarTarjetaComponent } from './components/buscar-tarjeta/buscar-tarjeta.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     CrearTarjetasComponent,
     MyCardsComponent,
     BuscarTarjetaComponent,
-    SidebarComponent
+    SidebarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
