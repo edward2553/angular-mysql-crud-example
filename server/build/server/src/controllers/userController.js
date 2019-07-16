@@ -22,17 +22,14 @@ class userController {
             res.json({ "message": "game " + id + " has been updated successfully" });
         });
     }
-    getUserAndgetPassword(req, res) {
+    getUserLogin(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            var usuario = req.param('usuario');
-            var contrasena = req.param('contrasena');
-            yield database_1.default.query("select * from usuario where nombre_usuario=" + '' + req.body.usuario + '' + "and contraseña = " + '' + req.body.contrasena, (err, Rows, fields) => {
+            yield database_1.default.query("select * from usuario where nombre_usuario =" + '' + req.params.user + '' + " and contrasena=" + '' + req.params.password + '' + "", (err, rows, fieds) => {
                 if (!err)
-                    res.json(Rows);
+                    res.json(rows);
                 else
                     console.log(err);
             });
-            res.json({ "message": "user has been successfully added" });
         });
     }
     getOneUser(req, res) {

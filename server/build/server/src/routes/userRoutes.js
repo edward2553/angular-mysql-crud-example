@@ -11,8 +11,8 @@ class UserRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', userController_1.default.getUserAndgetPassword);
-        this.router.get('/:id_getOneUser,', userController_1.default.getOneUser);
+        this.router.get('/userLogin/:user/:password', userController_1.default.getUserLogin);
+        this.router.get('/:id_getOneUser', userController_1.default.getOneUser);
         this.router.put('/:id_getOneUser', userController_1.default.updateUser);
     }
 }

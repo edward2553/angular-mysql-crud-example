@@ -12,19 +12,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
-class userController {
-    //metodos sql
-    updateUser(req, res) {
+class GamesController {
+    list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const id = parseInt(req.params.id_getOneUser, 10);
-            console.log(id);
-            yield database_1.default.query("update usuario set ? where id = ?", [req.body, id]);
-            res.json({ "message": "game " + id + " has been updated successfully" });
-        });
-    }
-    getUserLogin(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query("select * from usuario where nombre_usuario =" + "'" + req.params.id + "'" + " and contrasena=" + "'" + req.params.password + "'" + "", (err, rows, fieds) => {
+            yield database_1.default.query('select * from games', (err, rows, fieds) => {
                 if (!err)
                     res.json(rows);
                 else
@@ -32,9 +23,32 @@ class userController {
             });
         });
     }
-    getOneUser(req, res) {
+    create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query("select * from usuario where id =" + '' + req.params.id_getOneUser + '' + "", (err, rows, fieds) => {
+            yield database_1.default.query('insert into games set ? ', [req.body]);
+            res.json({ "message": "game has been created successfully" });
+        });
+    }
+    update(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const id = parseInt(req.params.id_update, 10);
+            yield database_1.default.query("update games set ? where id = ?", [req.body, id]);
+            res.json({ "message": "game " + id + " has been updated successfully" });
+        });
+    }
+    delete(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield database_1.default.query("delete from games where id =" + '' + req.params.id_delete + '' + "", (err, rows, fieds) => {
+                if (!err)
+                    res.json({ "message": "The game has been deleted successfully" });
+                else
+                    console.log(err);
+            });
+        });
+    }
+    getOne(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield database_1.default.query("select * from games where id =" + '' + req.params.id_getOne + '' + "", (err, rows, fieds) => {
                 if (!err)
                     res.json(rows);
                 else
@@ -43,5 +57,5 @@ class userController {
         });
     }
 }
-const userClass = new userController();
-exports.default = userClass;
+const gamesController = new GamesController();
+exports.default = gamesController;
