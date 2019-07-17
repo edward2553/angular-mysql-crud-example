@@ -14,16 +14,13 @@ export class BuscarTarjetaComponent implements OnInit {
   tarjetasres;
   termino: string;
 
-  constructor(private activatedRoute: ActivatedRoute, private cardsService: TarjetasService) {
+  constructor(private activatedRouter: ActivatedRoute, private cardsService: TarjetasService) {
 
   }
 
   ngOnInit() {
-
     this.getAllCards();
     this.metodoQueEsperaQueCopien();
-
-
   }
 
   aggToFavorite(id_persona:number,id_tarjeta:number){
@@ -50,7 +47,7 @@ export class BuscarTarjetaComponent implements OnInit {
   }
 
   metodoQueEsperaQueCopien() {
-    this.activatedRoute.params.subscribe(params => {
+    this.activatedRouter.params.subscribe(params => {
       const palabraABuscar = 'termino';
       this.termino = params[palabraABuscar];
       this.tarjetas = this.buscarTarjeta();
@@ -82,8 +79,5 @@ export class BuscarTarjetaComponent implements OnInit {
   }
 
 
-  deleteGame(id) {
-    console.log(id);
-  }
 
 }

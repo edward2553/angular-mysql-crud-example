@@ -8,7 +8,7 @@ import { MisTarjetasFavoritasComponent } from './components/mis-tarjetas-favorit
 import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  { path: ':isLogged', component: BuscarTarjetaComponent },
+  { path: '', component: BuscarTarjetaComponent },
   {
     path: 'perfil/:id',
     component: VerPerfilComponent

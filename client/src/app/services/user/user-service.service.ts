@@ -23,5 +23,6 @@ export class UserServiceService {
 
   UserValidation(user:User){
     return this.http.get(this.API_URI + '/user/userLogin/'+user.nombre_usuario+'/'+user.contrasena);
+    
   }
 }

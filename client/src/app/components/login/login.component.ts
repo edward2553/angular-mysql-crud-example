@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         }else if(this.user2[0].nombre_usuario == this.user.nombre_usuario && this.user2[0].contrasena == this.user.contrasena ){
           console.log(this.user2[0]);
           console.log("La contrasena es: "+this.user2[0].contrasena);
-          this.router.navigate(['/',true]);
+          this.router.navigate(['/']);
         }
       },
       err => console.log(err)
