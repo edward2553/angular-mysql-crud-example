@@ -41,7 +41,6 @@ export class VerPerfilComponent implements OnInit {
     const paramsURL = this.activatedRouter.snapshot.params;
     let id = parseInt(paramsURL.id);
     if (id) {
-
       this.userService.getOneUser(id)
       .subscribe(
         res => {
@@ -65,9 +64,5 @@ export class VerPerfilComponent implements OnInit {
       err => console.error(err)
     );
   }
-
-  saveNewUSer() {
-    console.log('creating a new user');
-   }
 
 }

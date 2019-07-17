@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import  userController  from '../controllers/userController';
 
+
 class UserRoutes{
     public router:Router = Router();
 

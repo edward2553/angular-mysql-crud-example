@@ -5,9 +5,10 @@ import { CrearTarjetasComponent } from './components/crear-tarjetas/crear-tarjet
 import { MyCardsComponent } from './components/my-cards/my-cards.component';
 import { BuscarTarjetaComponent } from './components/buscar-tarjeta/buscar-tarjeta.component';
 import { MisTarjetasFavoritasComponent } from './components/mis-tarjetas-favoritas/mis-tarjetas-favoritas.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  { path: '', component: BuscarTarjetaComponent },
+  { path: ':isLogged', component: BuscarTarjetaComponent },
   {
     path: 'perfil/:id',
     component: VerPerfilComponent
@@ -27,9 +28,18 @@ const routes: Routes = [
   {
     path: 'buscar/:termino',
     component: BuscarTarjetaComponent
-  },{
+  },
+  {
     path: 'cards/favorites',
     component: MisTarjetasFavoritasComponent
+  },
+  {
+    path: 'user/login',
+    component: LoginComponent
+  },
+  {
+    path: 'user/login',
+    component: LoginComponent
   }
 ];
 

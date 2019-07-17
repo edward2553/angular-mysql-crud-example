@@ -1,7 +1,10 @@
 import {Request,Response} from 'express';
 import  con  from '../database';
+var bcrypt = require('bcryptjs');
 
 class userController{
+    
+     
 
     //metodos sql
 
@@ -16,6 +19,7 @@ class userController{
         await con.query("select * from usuario where nombre_usuario ="+"'"+req.params.id+"'"+" and contrasena="+"'"+req.params.password+"'"+"",(err: any,rows: any,fieds: any)=>{
             if(!err)
                 res.json(rows);
+                
             else
                 console.log(err); 
             });
